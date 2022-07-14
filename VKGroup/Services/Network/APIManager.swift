@@ -23,7 +23,7 @@ class APIManager: API {
             DispatchQueue.main.async { copmletion(nil) }
             return
         }
-        network.sendRequest(request: request) { resp in
+        network.send(request: request) { resp in
             let array = resp?[d: .body][ad: .services].map { item -> [String:Any] in
                 var element = [String:Any]()
                 element[s:. reuse] = ServiceCell.reuseId
