@@ -34,12 +34,9 @@ class ListVC: UIViewController, Storyboarded {
         self.dataSource = dataSource
         self.apiManager = network
     }
-
-}
-
-extension ListVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let link = dataSource.data(for: indexPath)[d: .data][s: .link]
+    
+    @IBAction func didTapOnService(button: UIButton) {
+        guard let link = button.accessibilityLabel else { return }
         UIApplication.open(urlString: link)
     }
 }

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="262-nP-jN0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -56,6 +57,13 @@
                                                         <constraint firstAttribute="width" constant="40" id="mjP-KY-T2N"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgH-EV-vkx">
+                                                    <rect key="frame" x="0.0" y="11" width="414" height="73"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <connections>
+                                                        <action selector="didTapOnServiceWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SVN-uI-Hnd"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -68,22 +76,24 @@
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="r18-LE-94w" secondAttribute="bottom" constant="12" id="PE6-ee-7ZV"/>
                                                 <constraint firstItem="Y8V-Pz-tUc" firstAttribute="leading" secondItem="QCW-RG-A6T" secondAttribute="leadingMargin" constant="12" id="S6c-PD-zIC"/>
                                                 <constraint firstAttribute="trailing" secondItem="M1j-kX-Xd3" secondAttribute="trailing" id="VV4-Oo-h7d"/>
+                                                <constraint firstItem="YgH-EV-vkx" firstAttribute="top" secondItem="QCW-RG-A6T" secondAttribute="topMargin" id="Z2I-du-jDm"/>
                                                 <constraint firstItem="G64-9P-dUW" firstAttribute="leading" secondItem="Y8V-Pz-tUc" secondAttribute="trailing" constant="12" id="ckp-XX-aXt"/>
+                                                <constraint firstItem="YgH-EV-vkx" firstAttribute="leading" secondItem="QCW-RG-A6T" secondAttribute="leading" id="dyA-ym-0pf"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="G64-9P-dUW" secondAttribute="trailing" constant="20" id="g15-c1-nvJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="YgH-EV-vkx" secondAttribute="trailing" id="j1H-cQ-KTY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="YgH-EV-vkx" secondAttribute="bottom" id="xbB-hl-Oth"/>
                                                 <constraint firstItem="r18-LE-94w" firstAttribute="trailing" secondItem="G64-9P-dUW" secondAttribute="trailing" id="zOt-TY-WAp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="button" destination="YgH-EV-vkx" id="M5l-8v-flI"/>
                                             <outlet property="descLabel" destination="r18-LE-94w" id="1Q5-U2-u07"/>
                                             <outlet property="imgView" destination="Y8V-Pz-tUc" id="u0v-yU-q2c"/>
                                             <outlet property="titleLabel" destination="G64-9P-dUW" id="Q1U-oe-OZw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TvX-rf-hYg"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
