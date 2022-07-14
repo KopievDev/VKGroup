@@ -10,6 +10,8 @@ import UIKit
 class ListVC: UIViewController, Storyboarded {
 
     @IBOutlet private var tableView: UITableView!
+    @IBOutlet private var loader: UIActivityIndicatorView!
+
     var dataSource: Listable!
     var apiManager: API!
     
@@ -24,9 +26,11 @@ class ListVC: UIViewController, Storyboarded {
     }
     
     func loadData() {
+        loader.startAnimating()
         apiManager.getServices { [weak self] services in
             self?.dataSource.set(data: services)
             self?.tableView.reloadData()
+            self?.loader.stopAnimating()
         }
     }
     

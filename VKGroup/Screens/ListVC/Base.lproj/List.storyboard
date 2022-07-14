@@ -95,6 +95,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="QTJ-eQ-72x">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -107,6 +111,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Сервисы VK" id="tVT-fH-LhN"/>
                     <connections>
+                        <outlet property="loader" destination="QTJ-eQ-72x" id="Mcy-vM-VJJ"/>
                         <outlet property="tableView" destination="kPm-aX-60Y" id="lvB-I8-8Tu"/>
                     </connections>
                 </viewController>
