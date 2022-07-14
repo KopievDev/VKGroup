@@ -23,7 +23,6 @@ final class ListVC: UIViewController, Storyboarded {
     }
 
     //MARK: - IBAction -
-
     @IBAction private func didTapOnService(button: UIButton) {
         guard let link = button.accessibilityLabel else { return }
         UIApplication.open(urlString: link)
@@ -36,6 +35,7 @@ final class ListVC: UIViewController, Storyboarded {
         tableView.addSubview(refreshControl)
         tableView.dataSource = dataSource
     }
+    
     func set(dataSource: Listable, network: API) {
         self.dataSource = dataSource
         self.apiManager = network
