@@ -2,9 +2,9 @@ name: Swift
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -12,6 +12,11 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build
-      run: swift build -v
+    - uses: actions/checkout@v2
+    - uses: fwal/setup-swift@v1
+    - name: Build and test
+      run: |
+          swift package init
+          swift package generate-xcodeproj 
+          swift build -v 
+          swift test -v
