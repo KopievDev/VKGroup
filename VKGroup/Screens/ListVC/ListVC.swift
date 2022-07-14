@@ -15,7 +15,7 @@ final class ListVC: UIViewController, Storyboarded {
     private var apiManager: API!
     private let refreshControl = UIRefreshControl()
 
-    //MARK: - Livecycle -
+    //MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
