@@ -19,8 +19,6 @@ extension UIApplication {
             }
         }
     }
-    
-   
 }
 
 fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {

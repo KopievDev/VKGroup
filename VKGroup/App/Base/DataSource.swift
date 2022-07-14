@@ -35,8 +35,5 @@ final class DataSource: NSObject, Listable {
         (cell as? ReusableCell)?.render(data: data)
         return cell
     }
-    
-  
-        
 }
 

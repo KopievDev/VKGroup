@@ -14,4 +14,6 @@ extension String {
     static let description = "description"
     static let icon_url = "icon_url"
     static let link = "link"
+    static let body = "body"
+    static let services = "services"
 }

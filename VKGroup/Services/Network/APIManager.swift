@@ -24,7 +24,7 @@ class APIManager: API {
             return
         }
         network.sendRequest(request: request) { resp in
-            let array = resp?[d:"body"][ad:"services"].map { item -> [String:Any] in
+            let array = resp?[d: .body][ad: .services].map { item -> [String:Any] in
                 var element = [String:Any]()
                 element[s:. reuse] = ServiceCell.reuseId
                 element[d: .data] = item
@@ -38,6 +38,5 @@ class APIManager: API {
     init(network: Networkable = Network(config: .default)) {
         self.network = network
     }
-    
 }
 
