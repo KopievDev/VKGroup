@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  VKGroup
+
+  Created by Ivan Kopiev on 14.07.2022.
+  
+*/
+
+"Pull to refresh" = "Pull to refresh";
+"Ops..🙃" = "Ops..🙃";
+"Error loading data" = "Error loading data";
+"Repeat" = "Repeat";
+"Cancel" = "Cancel";

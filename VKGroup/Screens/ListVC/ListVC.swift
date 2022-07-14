@@ -31,7 +31,7 @@ final class ListVC: UIViewController, Storyboarded {
     
     //MARK: - Helpers -
     private func setUp() {
-        refreshControl.attributedTitle = NSAttributedString(string: "Потяните, чтобы обновить")
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh".localized)
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
         tableView.dataSource = dataSource
@@ -56,9 +56,9 @@ final class ListVC: UIViewController, Storyboarded {
     }
     
     private func showError() {
-        UIAlertController.show(title: "Упс..🙃",
-                               message: "Ошибка при загрузке данных",
-                               buttonTitles: ["Повторить", "Отмена"],
+        UIAlertController.show(title: "Ops..🙃".localized,
+                               message: "Error loading data".localized,
+                               buttonTitles: ["Repeat".localized, "Cancel".localized],
                                style: .alert) { selected in
             switch selected {
             case 0: self.loadData()
