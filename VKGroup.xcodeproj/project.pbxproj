@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50C05CA288019F0006E7EE3 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C05C9288019F0006E7EE3 /* UIAlertController.swift */; };
+		B50C05CC2880214E006E7EE3 /* Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C05CB2880214E006E7EE3 /* Localizer.swift */; };
 		B52015B3287FD04100B0BE0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52015B2287FD04100B0BE0F /* AppDelegate.swift */; };
 		B52015B5287FD04100B0BE0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52015B4287FD04100B0BE0F /* SceneDelegate.swift */; };
 		B52015B7287FD04100B0BE0F /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52015B6287FD04100B0BE0F /* ListVC.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B50C05C9288019F0006E7EE3 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		B50C05CB2880214E006E7EE3 /* Localizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizer.swift; sourceTree = "<group>"; };
 		B52015AF287FD04100B0BE0F /* VKGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52015B2287FD04100B0BE0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B52015B4287FD04100B0BE0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				B56DDC68287FE9E50083C81B /* String.swift */,
 				B52015CF287FD15E00B0BE0F /* UIImageView.swift */,
 				B52015D1287FD18300B0BE0F /* UITableViewCell.swift */,
+				B50C05C9288019F0006E7EE3 /* UIAlertController.swift */,
+				B50C05CB2880214E006E7EE3 /* Localizer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 				B56DDC6D287FF08C0083C81B /* Network.swift in Sources */,
 				B52015DB287FD6B000B0BE0F /* APIManager.swift in Sources */,
 				B52015DD287FDF2900B0BE0F /* Dictionary.swift in Sources */,
+				B50C05CC2880214E006E7EE3 /* Localizer.swift in Sources */,
 				B52015B5287FD04100B0BE0F /* SceneDelegate.swift in Sources */,
 				B56DDC6B287FED6F0083C81B /* UIApplication.swift in Sources */,
 				B52015CD287FD0C400B0BE0F /* ReusableCell.swift in Sources */,
@@ -273,6 +280,7 @@
 				B52015D2287FD18300B0BE0F /* UITableViewCell.swift in Sources */,
 				B52015D4287FD1F200B0BE0F /* Storyboarded.swift in Sources */,
 				B52015DF287FE62F00B0BE0F /* ServiceCell.swift in Sources */,
+				B50C05CA288019F0006E7EE3 /* UIAlertController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

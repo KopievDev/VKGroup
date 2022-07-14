@@ -95,17 +95,18 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="QTJ-eQ-72x">
-                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="QTJ-eQ-72x">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kPm-aX-60Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5Wz-1e-sb4"/>
+                            <constraint firstItem="QTJ-eQ-72x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ANU-5Z-a19"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kPm-aX-60Y" secondAttribute="bottom" id="G7Z-V8-Lq0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kPm-aX-60Y" secondAttribute="trailing" id="YU2-XO-nrg"/>
+                            <constraint firstItem="QTJ-eQ-72x" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="b6R-Zo-t7J"/>
                             <constraint firstItem="kPm-aX-60Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="icQ-Vj-eMs"/>
                         </constraints>
                     </view>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ServiceCell: ReusableCell {
+final class ServiceCell: ReusableCell {
     
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var descLabel: UILabel!
