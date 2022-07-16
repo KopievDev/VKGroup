@@ -27,11 +27,22 @@
 		B52015DF287FE62F00B0BE0F /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52015DE287FE62F00B0BE0F /* ServiceCell.swift */; };
 		B52745A32882B685009095BB /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52745A22882B685009095BB /* UIRefreshControl.swift */; };
 		B52745A52882D21B009095BB /* With.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52745A42882D21B009095BB /* With.swift */; };
+		B52745AD2882DA48009095BB /* VKGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52745AC2882DA48009095BB /* VKGroupTests.swift */; };
 		B56DDC69287FE9E50083C81B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56DDC68287FE9E50083C81B /* String.swift */; };
 		B56DDC6B287FED6F0083C81B /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56DDC6A287FED6F0083C81B /* UIApplication.swift */; };
 		B56DDC6D287FF08C0083C81B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56DDC6C287FF08C0083C81B /* Network.swift */; };
 		B56DDC70287FF0C90083C81B /* APIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56DDC6F287FF0C90083C81B /* APIType.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B52745AE2882DA48009095BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B52015A7287FD04100B0BE0F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B52015AE287FD04100B0BE0F;
+			remoteInfo = VKGroup;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B50C05C9288019F0006E7EE3 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
@@ -61,6 +72,8 @@
 		B52015DE287FE62F00B0BE0F /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		B52745A22882B685009095BB /* UIRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRefreshControl.swift; sourceTree = "<group>"; };
 		B52745A42882D21B009095BB /* With.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = With.swift; sourceTree = "<group>"; };
+		B52745AA2882DA48009095BB /* VKGroupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VKGroupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B52745AC2882DA48009095BB /* VKGroupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKGroupTests.swift; sourceTree = "<group>"; };
 		B56DDC68287FE9E50083C81B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B56DDC6A287FED6F0083C81B /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		B56DDC6C287FF08C0083C81B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -75,6 +88,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B52745A72882DA48009095BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				B52015B1287FD04100B0BE0F /* VKGroup */,
+				B52745AB2882DA48009095BB /* VKGroupTests */,
 				B52015B0287FD04100B0BE0F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				B52015AF287FD04100B0BE0F /* VKGroup.app */,
+				B52745AA2882DA48009095BB /* VKGroupTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,6 +210,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		B52745AB2882DA48009095BB /* VKGroupTests */ = {
+			isa = PBXGroup;
+			children = (
+				B52745AC2882DA48009095BB /* VKGroupTests.swift */,
+			);
+			path = VKGroupTests;
+			sourceTree = "<group>";
+		};
 		B56DDC6E287FF09F0083C81B /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +256,24 @@
 			productReference = B52015AF287FD04100B0BE0F /* VKGroup.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B52745A92882DA48009095BB /* VKGroupTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B52745B02882DA48009095BB /* Build configuration list for PBXNativeTarget "VKGroupTests" */;
+			buildPhases = (
+				B52745A62882DA48009095BB /* Sources */,
+				B52745A72882DA48009095BB /* Frameworks */,
+				B52745A82882DA48009095BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B52745AF2882DA48009095BB /* PBXTargetDependency */,
+			);
+			name = VKGroupTests;
+			productName = VKGroupTests;
+			productReference = B52745AA2882DA48009095BB /* VKGroupTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -238,6 +286,10 @@
 				TargetAttributes = {
 					B52015AE287FD04100B0BE0F = {
 						CreatedOnToolsVersion = 13.3;
+					};
+					B52745A92882DA48009095BB = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = B52015AE287FD04100B0BE0F;
 					};
 				};
 			};
@@ -256,6 +308,7 @@
 			projectRoot = "";
 			targets = (
 				B52015AE287FD04100B0BE0F /* VKGroup */,
+				B52745A92882DA48009095BB /* VKGroupTests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,6 +322,13 @@
 				B50C05CF288021DD006E7EE3 /* Localizable.strings in Resources */,
 				B52015BC287FD04200B0BE0F /* Assets.xcassets in Resources */,
 				B52015BA287FD04100B0BE0F /* List.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B52745A82882DA48009095BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +362,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B52745A62882DA48009095BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B52745AD2882DA48009095BB /* VKGroupTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B52745AF2882DA48009095BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B52015AE287FD04100B0BE0F /* VKGroup */;
+			targetProxy = B52745AE2882DA48009095BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B50C05D1288021DD006E7EE3 /* Localizable.strings */ = {
@@ -507,6 +583,46 @@
 			};
 			name = Release;
 		};
+		B52745B12882DA48009095BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 95D67VXK3X;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.mustdev.VKGroupTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VKGroup.app/VKGroup";
+			};
+			name = Debug;
+		};
+		B52745B22882DA48009095BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 95D67VXK3X;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.mustdev.VKGroupTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VKGroup.app/VKGroup";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -524,6 +640,15 @@
 			buildConfigurations = (
 				B52015C4287FD04200B0BE0F /* Debug */,
 				B52015C5287FD04200B0BE0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B52745B02882DA48009095BB /* Build configuration list for PBXNativeTarget "VKGroupTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B52745B12882DA48009095BB /* Debug */,
+				B52745B22882DA48009095BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
