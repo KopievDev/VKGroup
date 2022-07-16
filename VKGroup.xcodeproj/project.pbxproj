@@ -25,6 +25,8 @@
 		B52015DB287FD6B000B0BE0F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52015DA287FD6B000B0BE0F /* APIManager.swift */; };
 		B52015DD287FDF2900B0BE0F /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52015DC287FDF2900B0BE0F /* Dictionary.swift */; };
 		B52015DF287FE62F00B0BE0F /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52015DE287FE62F00B0BE0F /* ServiceCell.swift */; };
+		B52745A32882B685009095BB /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52745A22882B685009095BB /* UIRefreshControl.swift */; };
+		B52745A52882D21B009095BB /* With.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52745A42882D21B009095BB /* With.swift */; };
 		B56DDC69287FE9E50083C81B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56DDC68287FE9E50083C81B /* String.swift */; };
 		B56DDC6B287FED6F0083C81B /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56DDC6A287FED6F0083C81B /* UIApplication.swift */; };
 		B56DDC6D287FF08C0083C81B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56DDC6C287FF08C0083C81B /* Network.swift */; };
@@ -57,6 +59,8 @@
 		B52015DA287FD6B000B0BE0F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		B52015DC287FDF2900B0BE0F /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		B52015DE287FE62F00B0BE0F /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		B52745A22882B685009095BB /* UIRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRefreshControl.swift; sourceTree = "<group>"; };
+		B52745A42882D21B009095BB /* With.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = With.swift; sourceTree = "<group>"; };
 		B56DDC68287FE9E50083C81B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B56DDC6A287FED6F0083C81B /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		B56DDC6C287FF08C0083C81B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				B52015D1287FD18300B0BE0F /* UITableViewCell.swift */,
 				B50C05C9288019F0006E7EE3 /* UIAlertController.swift */,
 				B50C05CB2880214E006E7EE3 /* Localizer.swift */,
+				B52745A22882B685009095BB /* UIRefreshControl.swift */,
+				B52745A42882D21B009095BB /* With.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,9 +280,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B52015B7287FD04100B0BE0F /* ListVC.swift in Sources */,
+				B52745A32882B685009095BB /* UIRefreshControl.swift in Sources */,
 				B56DDC69287FE9E50083C81B /* String.swift in Sources */,
 				B52015B3287FD04100B0BE0F /* AppDelegate.swift in Sources */,
 				B52015D8287FD4BE00B0BE0F /* DataSource.swift in Sources */,
+				B52745A52882D21B009095BB /* With.swift in Sources */,
 				B56DDC70287FF0C90083C81B /* APIType.swift in Sources */,
 				B52015D6287FD36000B0BE0F /* VCBuilder.swift in Sources */,
 				B56DDC6D287FF08C0083C81B /* Network.swift in Sources */,

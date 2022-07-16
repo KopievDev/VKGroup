@@ -13,7 +13,7 @@ final class ListVC: UIViewController, Storyboarded {
     @IBOutlet private var loader: UIActivityIndicatorView!
     private var dataSource: Listable!
     private var apiManager: API!
-    private let refreshControl = UIRefreshControl()
+    private lazy var refreshControl = UIRefreshControl(text: "Pull to refresh".localized, target: self, action: #selector(refresh))
 
     //MARK: - Lifecycle -
     override func viewDidLoad() {
@@ -30,8 +30,6 @@ final class ListVC: UIViewController, Storyboarded {
     
     //MARK: - Helpers -
     private func setUp() {
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh".localized)
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
         tableView.dataSource = dataSource
     }
