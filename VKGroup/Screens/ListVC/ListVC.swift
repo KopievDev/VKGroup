@@ -31,7 +31,7 @@ final class ListVC: UIViewController, Storyboarded {
     //MARK: - Helpers -
     private func setUp() {
         tableView.addSubview(refreshControl)
-        tableView.dataSource = dataSource
+        dataSource.set(tableView: tableView)
     }
     
     func set(dataSource: Listable, network: API) {
@@ -42,15 +42,21 @@ final class ListVC: UIViewController, Storyboarded {
     private func loadData() {
         loader.startAnimating()
         apiManager.getServices { [weak self] services in
-            guard let services = services else {
-                self?.showError()
-                return
-            }
-            self?.dataSource.set(data: services)
-            self?.tableView.reloadData()
-            self?.loader.stopAnimating()
-            self?.refreshControl.endRefreshing()
+            guard let services = services else { self?.showError(); return }
+            self?.set(services: services)
         }
+    }
+    
+    private func set(services: [[String:Any]]) {
+        var cache = services
+        cache.append([.reuse:CollectionCell.reuseId,
+                      .data: ["items": [[:],[:],[:],[:],[:],[:]] ] ])
+        cache.append([.reuse:CollectionCell.reuseId,
+                      .data: ["items": [[:],[:],[:]] ] ])
+        
+        dataSource.set(data: cache)
+        loader.stopAnimating()
+        refreshControl.endRefreshing()
     }
     
     private func showError() {

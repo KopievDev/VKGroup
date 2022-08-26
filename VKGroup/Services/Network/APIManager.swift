@@ -7,30 +7,25 @@
 
 import UIKit
 
-typealias ServicesBlock = ([[String:Any]]?) -> Void
+typealias ArrayOfDict = ([[String:Any]]?) -> Void
 
 protocol API: AnyObject {
     var network: Networkable { get set }
-    func getServices(copmletion: @escaping ServicesBlock)
+    func getServices(copmletion: @escaping ArrayOfDict)
 }
 
 class APIManager: API {
     
     var network: Networkable = Network(config: .default)
 
-    func getServices(copmletion: @escaping ServicesBlock) {
-        guard let request = APIType.services.request  else {
-            DispatchQueue.main.async { copmletion(nil) }
+    func getServices(copmletion: @escaping ArrayOfDict) {
+        guard let request = APIType.services.request else {
+            copmletion(nil)
             return
         }
-        network.send(request: request) { resp in
-            let array = resp?[d: .body][ad: .services].map { item -> [String:Any] in
-                var element = [String:Any]()
-                element[s:. reuse] = ServiceCell.reuseId
-                element[d: .data] = item
-                return element
-            }
-            
+        network.send(request: request) { [weak self] resp in
+            guard let self = self else { return }
+            let array = resp?[d: .body][ad: .services].map { self.create(cellId: ServiceCell.reuseId, data: $0) }
             DispatchQueue.main.async { copmletion(array) }
         }
     }
@@ -40,3 +35,12 @@ class APIManager: API {
     }
 }
 
+private extension APIManager {
+    
+    func create(cellId: String, data: [String:Any]) -> [String:Any] {
+        var element = [String:Any]()
+        element[s:. reuse] = ServiceCell.reuseId
+        element[d: .data] = data
+        return element
+    }
+}
