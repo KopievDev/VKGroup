@@ -15,7 +15,7 @@ class LoyaltyVC: UIViewController, Storyboarded {
     //MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource.set(data: screenData.getData())
+        update()
     }
     //MARK: - IBAction -
     @IBAction func didTapClose(Button: UIButton) {
@@ -23,18 +23,34 @@ class LoyaltyVC: UIViewController, Storyboarded {
     }
     
     @IBAction func didTapFullTerms(Button: UIButton) {
-        print(#function)
+        screenData.enumCells.forEach { $0.title = "its work" }
+        update()
+    }
+    
+    func update() {
+        dataSource.set(data: screenData.getData())
     }
 }
 
 class ScreenData {
-    struct EnumeratedData {
+    class EnumeratedData {
+        init(name: String, number: Int, id: String = UUID().uuidString) {
+            self.name = name
+            self.number = number
+            self.id = id
+        }
+        
         var name: String
         var number: Int
         var id: String = UUID().uuidString
     }
     
-    struct EnumCell {
+    class EnumCell {
+        init(title: String, array: [ScreenData.EnumeratedData] = []) {
+            self.title = title
+            self.array = array
+        }
+        
         var title: String
         var array: [EnumeratedData] = []
     }
@@ -63,7 +79,6 @@ class ScreenData {
         result.append([.reuse:ButtonCell.reuseId, .data: ["name": "Полные условия программы"]])
         return result
     }
-    
     
 }
 
