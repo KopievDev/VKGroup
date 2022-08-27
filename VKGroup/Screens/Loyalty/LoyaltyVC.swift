@@ -11,10 +11,11 @@ class LoyaltyVC: UIViewController, Storyboarded {
     //MARK: - Properties -
     @IBOutlet private var tableView: UITableView!
     private lazy var dataSource: Listable = DataSource(tableView: tableView)
+    let screenData = ScreenData()
     //MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource.set(data: DataBuilder(data: [:]).getLoyaltyProgram())
+        dataSource.set(data: screenData.getData())
     }
     //MARK: - IBAction -
     @IBAction func didTapClose(Button: UIButton) {
@@ -25,6 +26,47 @@ class LoyaltyVC: UIViewController, Storyboarded {
         print(#function)
     }
 }
+
+class ScreenData {
+    struct EnumeratedData {
+        var name: String
+        var number: Int
+        var id: String = UUID().uuidString
+    }
+    
+    struct EnumCell {
+        var title: String
+        var array: [EnumeratedData] = []
+    }
+    
+    var enumCells: [EnumCell] = [
+        EnumCell(title: "Как накопить бонусы?", array: [
+            EnumeratedData(name: "За все потраченные рубли при заказе в интернет-витрине или покупке в винотеке вы получаете бонусы в размере 5%", number: 1),
+            EnumeratedData(name: "Ваша скидка увеличивается на 5% при увеличении общей суммы покупок за год. Максимальная скидка 15%", number: 2)]),
+        EnumCell(title: "Как накопить бонусы?", array: [
+            EnumeratedData(name: "Бонусами можно оплатить до 50% стоимости покупки по курсу 1 бонус = 1 рубль", number: 1),
+            EnumeratedData(name: "Бонусами нельзя оплатить дегустации и другие услуги", number: 2)]),
+        EnumCell(title: "Кое-что еще", array: [
+            EnumeratedData(name: "Бонусы начисляются уже с первого заказа или покупки", number: 1),
+            EnumeratedData(name: "Начисленные бонусы активируются через 14 дней после начисления", number: 2),
+            EnumeratedData(name: "Срок жизни бонусов – год со дня начисления. Торопитесь потратить!", number: 3)]),
+    ]
+    
+    func getData() -> [[String:Any]] {
+        var result = [[String:Any]]()
+        result.append([.reuse:NavCell.reuseId, .data: ["name": "Програма лояльности"]])
+        result.append([.reuse:CollectionCell.reuseId, .data: ["items": [[:],[:],[:],[:],[:],[:]] ] ])
+        enumCells.forEach { cell in
+            result.append([.reuse:TitleCell.reuseId, .data: ["name": cell.title]])
+            cell.array.forEach { result.append([.reuse:EnumeratedCell.reuseId, .data: ["name": $0.name, "number": "\($0.number)"]]) }
+        }
+        result.append([.reuse:ButtonCell.reuseId, .data: ["name": "Полные условия программы"]])
+        return result
+    }
+    
+    
+}
+
 
 struct DataBuilder {
     var data: [String:Any]
