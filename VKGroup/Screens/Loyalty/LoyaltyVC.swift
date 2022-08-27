@@ -1,59 +1,35 @@
 //
-//  ListVC.swift
+//  LoyaltyVC.swift
 //  VKGroup
 //
-//  Created by Ivan Kopiev on 14.07.2022.
+//  Created by Ivan Kopiev on 27.08.2022.
 //
 
 import UIKit
 
-final class ListVC: UIViewController, Storyboarded {
+class LoyaltyVC: UIViewController, Storyboarded {
     //MARK: - Properties -
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet private var loader: UIActivityIndicatorView!
-    private var dataSource: Listable!
-    private var apiManager: API!
-    private lazy var refreshControl = UIRefreshControl(text: "Pull to refresh".localized, target: self, action: #selector(refresh))
-
+    private var dataSource: Listable = DataSource()
     //MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUp()
-        loadData()
-    }
-
-    //MARK: - IBAction -
-    @IBAction private func didTapOnService(button: UIButton) {
-        guard let link = button.accessibilityLabel else { return }
-        UIApplication.open(urlString: link)
-    }
-    
-    @IBAction private func openLoyalty(button: UIButton) {
-        guard let vc = LoyaltyVC.instantiate() else { return }
-        present(vc, animated: true)
-    }
-    
-    //MARK: - Helpers -
-    private func setUp() {
-        tableView.addSubview(refreshControl)
         dataSource.set(tableView: tableView)
+        dataSource.set(data: DataBuilder(data: [:]).getLoyaltyProgram())
     }
-    
-    func set(dataSource: Listable, network: API) {
-        self.dataSource = dataSource
-        self.apiManager = network
+    //MARK: - IBAction -
+    @IBAction func didTapClose(Button: UIButton) {
+        dismiss(animated: true)
     }
-    
-    private func loadData() {
-        loader.startAnimating()
-        apiManager.getServices { [weak self] services in
-            guard let services = services else { self?.showError(); return }
-            self?.set(services: services)
-        }
-    }
-    
-    private func set(services: [[String:Any]]) {
-        var cache = services
+    //MARK: - Selectors -
+    //MARK: - Helpers -
+}
+
+struct DataBuilder {
+    var data: [String:Any]
+    func getLoyaltyProgram() -> [[String:Any]] {
+        var cache: [[String:Any]] = []
+        cache.append([.reuse:NavCell.reuseId, .data: ["name": "Програма лояльности"]])
         cache.append([.reuse:CollectionCell.reuseId, .data: ["items": [[:],[:],[:],[:],[:],[:]] ] ])
         cache.append([.reuse:TitleCell.reuseId, .data: ["name": "Как накопить бонусы?"]])
         cache.append([.reuse:EnumeratedCell.reuseId, .data: ["name": "За все потраченные рубли при заказе в интернет-витрине или покупке в винотеке вы получаете бонусы в размере 5%", "number": "1"]])
@@ -68,31 +44,7 @@ final class ListVC: UIViewController, Storyboarded {
         cache.append([.reuse:EnumeratedCell.reuseId, .data: ["name": "Начисленные бонусы активируются через 14 дней после начисления", "number": "2"]])
         cache.append([.reuse:EnumeratedCell.reuseId, .data: ["name": "Срок жизни бонусов – год со дня начисления. Торопитесь потратить!", "number": "3"]])
         cache.append([.reuse:ButtonCell.reuseId, .data: ["name": "Полные условия программы"]])
-
-        
-        dataSource.set(data: cache)
-        loader.stopAnimating()
-        refreshControl.endRefreshing()
-    }
-    
-    private func showError() {
-        UIAlertController.show(title: "Ops..🙃".localized,
-                               message: "Error loading data".localized,
-                               buttonTitles: ["Repeat".localized, "Cancel".localized],
-                               style: .alert) { selected in
-            switch selected {
-            case 0: self.loadData()
-            default: self.loader.stopAnimating()
-            }
-        }
-    }
-    
-    //MARK: - Selectors -
-    @objc func refresh() {
-       loadData()
-    }
-    
-    @objc func test() {
-        print(#function)
+        return cache
     }
 }
+

@@ -10,6 +10,8 @@
 		B50C05CA288019F0006E7EE3 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C05C9288019F0006E7EE3 /* UIAlertController.swift */; };
 		B50C05CC2880214E006E7EE3 /* Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C05CB2880214E006E7EE3 /* Localizer.swift */; };
 		B50C05CF288021DD006E7EE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B50C05D1288021DD006E7EE3 /* Localizable.strings */; };
+		B5111F6728B9E2020047C99C /* LoyaltyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5111F6628B9E2020047C99C /* LoyaltyVC.swift */; };
+		B5111F6928B9E2140047C99C /* Loyalty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5111F6828B9E2140047C99C /* Loyalty.storyboard */; };
 		B52015B3287FD04100B0BE0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52015B2287FD04100B0BE0F /* AppDelegate.swift */; };
 		B52015B5287FD04100B0BE0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52015B4287FD04100B0BE0F /* SceneDelegate.swift */; };
 		B52015B7287FD04100B0BE0F /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52015B6287FD04100B0BE0F /* ListVC.swift */; };
@@ -54,6 +56,8 @@
 		B50C05D4288021ED006E7EE3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B50C05D628802283006E7EE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B50C05D8288022A8006E7EE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/List.strings; sourceTree = "<group>"; };
+		B5111F6628B9E2020047C99C /* LoyaltyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyVC.swift; sourceTree = "<group>"; };
+		B5111F6828B9E2140047C99C /* Loyalty.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loyalty.storyboard; sourceTree = "<group>"; };
 		B52015AF287FD04100B0BE0F /* VKGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52015B2287FD04100B0BE0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B52015B4287FD04100B0BE0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5111F6A28B9E21A0047C99C /* Loyalty */ = {
+			isa = PBXGroup;
+			children = (
+				B5111F6628B9E2020047C99C /* LoyaltyVC.swift */,
+				B5111F6828B9E2140047C99C /* Loyalty.storyboard */,
+			);
+			path = Loyalty;
+			sourceTree = "<group>";
+		};
 		B52015A6287FD04100B0BE0F = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +168,7 @@
 		B52015C8287FD06800B0BE0F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B5111F6A28B9E21A0047C99C /* Loyalty */,
 				B52015C9287FD07000B0BE0F /* ListVC */,
 			);
 			path = Screens;
@@ -321,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5111F6928B9E2140047C99C /* Loyalty.storyboard in Resources */,
 				B52015BF287FD04200B0BE0F /* LaunchScreen.storyboard in Resources */,
 				B50C05CF288021DD006E7EE3 /* Localizable.strings in Resources */,
 				B52015BC287FD04200B0BE0F /* Assets.xcassets in Resources */,
@@ -345,6 +360,7 @@
 				B52015B7287FD04100B0BE0F /* ListVC.swift in Sources */,
 				B52745A32882B685009095BB /* UIRefreshControl.swift in Sources */,
 				B56DDC69287FE9E50083C81B /* String.swift in Sources */,
+				B5111F6728B9E2020047C99C /* LoyaltyVC.swift in Sources */,
 				B52015B3287FD04100B0BE0F /* AppDelegate.swift in Sources */,
 				B52015D8287FD4BE00B0BE0F /* DataSource.swift in Sources */,
 				B52745A52882D21B009095BB /* With.swift in Sources */,
