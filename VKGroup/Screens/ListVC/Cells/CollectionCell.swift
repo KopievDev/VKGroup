@@ -14,11 +14,11 @@ final class CollectionCell: ReusableCell {
     
     override func setUp() {
         collectionView.delegate = self
+        CellSize(widthScale: 0.8, aspectRatio: 0.7).forCollectionView(collectionView)
     }
     
     override func render(data: [String: Any]) {
         items = data[ad:"items"]
-        CellSize(widthScale: 0.8, aspectRatio: 1).setSizeForCell(of: collectionView)
     }
     
 }
@@ -55,9 +55,8 @@ struct CellSize {
     var cellWeight: CGFloat { floor(screenSize.width * widthScale) }
     var cellHeight: CGFloat { floor(cellWeight * aspectRatio) }
     var insetX: CGFloat { (screenSize.width - cellWeight) / 2.0 }
-    var insetY: CGFloat { (screenSize.height - cellWeight) / 2.0 }
     
-    func setSizeForCell(of collectionView: UICollectionView?) {
+    func forCollectionView(_ collectionView: UICollectionView?) {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: insetX, bottom: 0, right: insetX)
         flowLayout.scrollDirection = .horizontal
