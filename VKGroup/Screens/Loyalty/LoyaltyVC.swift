@@ -10,11 +10,10 @@ import UIKit
 class LoyaltyVC: UIViewController, Storyboarded {
     //MARK: - Properties -
     @IBOutlet private var tableView: UITableView!
-    private var dataSource: Listable = DataSource()
+    private lazy var dataSource: Listable = DataSource(tableView: tableView)
     //MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource.set(tableView: tableView)
         dataSource.set(data: DataBuilder(data: [:]).getLoyaltyProgram())
     }
     //MARK: - IBAction -
@@ -25,8 +24,6 @@ class LoyaltyVC: UIViewController, Storyboarded {
     @IBAction func didTapFullTerms(Button: UIButton) {
         print(#function)
     }
-    //MARK: - Selectors -
-    //MARK: - Helpers -
 }
 
 struct DataBuilder {
