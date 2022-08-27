@@ -21,6 +21,10 @@ class LoyaltyVC: UIViewController, Storyboarded {
     @IBAction func didTapClose(Button: UIButton) {
         dismiss(animated: true)
     }
+    
+    @IBAction func didTapFullTerms(Button: UIButton) {
+        print(#function)
+    }
     //MARK: - Selectors -
     //MARK: - Helpers -
 }
